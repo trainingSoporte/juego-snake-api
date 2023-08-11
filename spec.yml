@@ -1,0 +1,40 @@
+openapi: '3.0.2'
+info:
+  title: Snake
+  version: '1.0'
+servers:
+  - url: http://localhost:3000/v1
+tags:
+  - name: User
+    description: Usuarios del juego Snake
+
+components:
+  schemas:
+    user:
+      type: object
+      properties:
+        username:
+          type: string
+        fullname:
+          type: string
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+paths:
+  /users:
+    get:
+      description: Obtiene los Usuarios de la aplicacion
+      operationId: getUsers
+      responses:
+        '200':
+          description: OK
+          content:
+            applicatio/json:
+              schema:
+                $ref: "#/components/schemas/user"
+      tags:
+        - "User"
+                
