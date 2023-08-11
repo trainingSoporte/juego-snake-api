@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 
 
-router.get('/',authenticateUser ,(req, res) => {
+router.get('/',(req, res) => {
     try {
         //getUsers
         console.log('getUsers');
+        res.send('GET Users');
         res.status(200);
 
     } catch (error) {
