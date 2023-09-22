@@ -73,7 +73,14 @@ npm install
 
 ```
 
-_6 Ejecuta el Servidor:_
+_6 Crea la Base de Datos:_
+
+```
+docker-compose -f docker-compose.yaml up
+
+```
+
+_7 Ejecuta el Servidor:_
 
 ```
 node server
