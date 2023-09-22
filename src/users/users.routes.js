@@ -1,12 +1,13 @@
-const express = require('express');
-const router = express.Router();
 
+import express from 'express';
+import controller from './users.controller.js';
+const userRouter = express.Router();
 
-router.get('/',(req, res) => {
+userRouter.get('/', (req, res) => {
     try {
-        //getUsers
         console.log('getUsers');
-        res.send('GET Users');
+        const users = controller.getUsers();
+        res.send(users);
         res.status(200);
 
     } catch (error) {
@@ -15,11 +16,11 @@ router.get('/',(req, res) => {
     }
 });
 
-
-router.post("/" ,(req, res) => {
+userRouter.post("/", (req, res) => {
     try {
-        //createUser
         console.log('createUser');
+        const user = controller.createUser(req.body);
+        res.send(user);
         res.status(201);
 
     } catch (error) {
@@ -28,5 +29,5 @@ router.post("/" ,(req, res) => {
     }
 });
 
-module.exports = router;
+export default userRouter;
 
