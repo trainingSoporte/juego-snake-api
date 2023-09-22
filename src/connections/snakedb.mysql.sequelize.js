@@ -1,4 +1,4 @@
-const {Model,MySql,DataTypes} = require('../../database/mysql/mysql-sequelize.js');
+const {MySql,Model,DataTypes} = require('../../database/mysql/mysql-sequelize.js');
 
 const snakeDBConfig = {
     database: 'snakedb',
@@ -7,4 +7,4 @@ const snakeDBConfig = {
     dbConfig: ''
 }
 
-module.exports={Model,MySql,DataTypes,snakeDBConfig}
+module.exports =  {Model,MySql,DataTypes,snakeDBConfig};

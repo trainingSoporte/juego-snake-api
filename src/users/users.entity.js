@@ -1,4 +1,4 @@
-import { Model, DataTypes} from 'sequelize';
+const {DataTypes,Model} = require('../connections/snakedb.mysql.sequelize');
 
 class User extends Model {
     static init(sequelize) {
@@ -51,4 +51,4 @@ class User extends Model {
     }
 }
 
-module.exports = { User }
+module.exports = {User};

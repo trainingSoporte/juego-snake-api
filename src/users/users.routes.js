@@ -1,12 +1,12 @@
 
-import express from 'express';
-import controller from './users.controller.js';
+const express = require('express');
+const controller = require('./users.controller.js');
 const userRouter = express.Router();
 
-userRouter.get('/', (req, res) => {
+userRouter.get('/', async(req, res) => {
     try {
         console.log('getUsers');
-        const users = controller.getUsers();
+        const users = await controller.getUsers();
         res.send(users);
         res.status(200);
 
@@ -16,10 +16,10 @@ userRouter.get('/', (req, res) => {
     }
 });
 
-userRouter.post("/", (req, res) => {
+userRouter.post("/", async(req, res) => {
     try {
         console.log('createUser');
-        const user = controller.createUser(req.body);
+        const user = await controller.createUser(req.body);
         res.send(user);
         res.status(201);
 
@@ -29,5 +29,5 @@ userRouter.post("/", (req, res) => {
     }
 });
 
-export default userRouter;
+module.exports = userRouter;
 

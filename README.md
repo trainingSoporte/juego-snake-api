@@ -80,9 +80,9 @@ docker-compose -f docker-compose.yaml up
 
 ```
 
-_7 Ejecuta el Servidor:_
+_7 Ejecuta el Servidor en modo desarrollo:_
 
 ```
-node server
+npm run dev
 
 ```
